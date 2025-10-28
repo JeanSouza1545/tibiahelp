@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const HeroSection: React.FC = () => {
   return (
@@ -26,12 +27,12 @@ const HeroSection: React.FC = () => {
           consultas em tempo real e integração com APIs oficiais da CipSoft.
         </p>
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <a href="#ferramentas" className="btn" style={{ backgroundColor: 'white', color: '#667eea' }}>
-            Explorar Ferramentas
-          </a>
-          <a href="#sobre" className="btn btn-secondary" style={{ backgroundColor: 'rgba(255,255,255,0.2)', color: 'white' }}>
+          <Link to="/calculators" className="btn" style={{ backgroundColor: 'white', color: '#667eea' }}>
+            Explorar Calculadoras
+          </Link>
+          <Link to="/about" className="btn btn-secondary" style={{ backgroundColor: 'rgba(255,255,255,0.2)', color: 'white' }}>
             Saiba Mais
-          </a>
+          </Link>
         </div>
       </div>
     </section>

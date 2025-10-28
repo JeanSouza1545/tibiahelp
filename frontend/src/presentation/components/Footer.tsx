@@ -12,9 +12,6 @@ const Footer: React.FC = () => {
         <p style={{ marginBottom: '1rem' }}>
           © 2025 tibiaHelp - Plataforma de ferramentas para jogadores de Tibia
         </p>
-        <p style={{ fontSize: '0.9rem', color: '#ccc' }}>
-          Desenvolvido com React, TypeScript e Clean Architecture
-        </p>
       </div>
     </footer>
   )
