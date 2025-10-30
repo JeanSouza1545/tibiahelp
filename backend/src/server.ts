@@ -6,7 +6,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 const app = express()
-const PORT = process.env.PORT || 3001
+const PORT = process.env['PORT'] || 3001
 
 // Middleware
 app.use(cors())
@@ -39,7 +39,7 @@ app.use((err: Error, req: express.Request, res: express.Response, next: express.
   console.error(err.stack)
   res.status(500).json({
     error: 'Algo deu errado!',
-    message: process.env.NODE_ENV === 'development' ? err.message : 'Erro interno do servidor'
+    message: process.env['NODE_ENV'] === 'development' ? err.message : 'Erro interno do servidor'
   })
 })
 

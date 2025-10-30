@@ -1,4 +1,3 @@
-import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from '@presentation/components/Header'
 import Footer from '@presentation/components/Footer'
@@ -6,6 +5,7 @@ import LandingPage from '@presentation/pages/LandingPage'
 import CalculatorsPage from '@presentation/pages/CalculatorsPage'
 import AboutPage from '@presentation/pages/AboutPage'
 import XpLevelCalculator from '@presentation/pages/calculators/XpLevelCalculator'
+import ExerciseWeaponCalculator from '@presentation/pages/calculators/ExerciseWeaponCalculator'
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/calculators" element={<CalculatorsPage />} />
             <Route path="/calculators/xp-level" element={<XpLevelCalculator />} />
+            <Route path="/calculators/exercise-weapons" element={<ExerciseWeaponCalculator />} />
             <Route path="/about" element={<AboutPage />} />
           </Routes>
         </main>

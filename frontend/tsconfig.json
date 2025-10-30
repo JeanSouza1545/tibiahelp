@@ -24,6 +24,7 @@
     "baseUrl": ".",
     "paths": {
       "@application/*": ["src/application/*"],
+      "@domain": ["src/domain/index.ts"],
       "@domain/*": ["src/domain/*"],
       "@infrastructure/*": ["src/infrastructure/*"],
       "@presentation/*": ["src/presentation/*"],
