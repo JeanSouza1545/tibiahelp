@@ -8,5 +8,5 @@ export const healthCheck = async () => {
         alert('Serviço indisponível')
     }
 }
-
+ 
 export default healthCheck
