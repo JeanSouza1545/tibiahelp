@@ -1,0 +1,20 @@
+.button{
+    display: flex;
+    width: 80px;
+    height: 30px;
+    font-size: 14px;
+    font-family: 'inter', sans-serif;
+    font-weight: 600;
+    color: #FFF;
+    align-items: center;
+    background: linear-gradient(to right, #F59E0B 0%, #F54B00 100%);
+    border-radius: 8px;
+    padding: 0;
+    border: none;
+    transition: 1s;
+}
+
+.button:hover {
+    background: linear-gradient(to right, #ff6600 0%, #ea400c 100%);
+    cursor: pointer;
+}

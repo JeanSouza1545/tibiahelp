@@ -37,20 +37,8 @@
 }
 
 .userButton{
-    display: flex;
-    width: 80px;
-    height: 30px;
-    font-size: 14px;
-    font-family: 'inter', sans-serif;
-    font-weight: 600;
-    color: #FFF;
-    align-items: center;
     justify-content: space-evenly;
-    background: linear-gradient(to right, #F59E0B 0%, #F54B00 100%);
-    border-radius: 8px;
     margin-right: 40px;
-    padding: 0;
-    border: none;
 }
 
 .userButton:hover {

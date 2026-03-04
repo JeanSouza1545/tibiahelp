@@ -1,17 +1,106 @@
 .mainContainer{
     width: 100%;
-    height: 100%;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background: red; */
 }
 
-.homeTittle {
+.homeTitle {
     background: linear-gradient(to right, #F59E0B 0%, #F54B00 100%);
     background-clip: text;
+    font-size: 70px;
+    font-family: 'inter', sans-serif;
     -webkit-background-clip: text;
     color: transparent;
     width: fit-content;
 }
 
+.titleDesc {
+    font-size: 25px;
+    font-family: 'inter', sans-serif;
+    text-align: center;
+}
+
+.navContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+}
+
+.toolsButton {
+    width: 250px;
+    height: 50px;
+    font-size: large;
+    color: #FFF;
+    font-weight: bold;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.navContainer .guidesButton {
+    width: 250px;
+    height: 50px;
+}
+
+.funcionalitiesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    /* background: red; */
+    margin-bottom: 50px;
+}
+
+.funcionalitiesTitle {
+    font-size: 35px;
+    font-family: sans-serif;
+    color: #F59E0B;
+    text-align: center;
+}
+
+.funcionalitiesNavigation{
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+}
+
+.optionContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.aboutContainer{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.aboutSection{
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    height: fit-content;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 18px;
+    padding: 15px;
+}
+
+.aboutTitle{
+    color: #F59E0B;
+    font-size: 40px;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.abountContent{
+    font-size: 20px;
+    font-family: sans-serif;
+}

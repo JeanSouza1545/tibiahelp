@@ -1,0 +1,28 @@
+.button{
+    display: flex;
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+    font-family: 'inter', sans-serif;
+    font-weight: bold;
+    color: #F59E0B;
+    align-items: center;
+    justify-content: center;
+    background: #FFF;
+    border-radius: 8px;
+    padding: 0;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #F59E0B;
+    transition: 0.2s;
+}
+
+.button:hover {
+    background: #b6b6b6;
+    cursor: pointer;
+    color: #ea400c;
+}
+
+/* 
+    F59E0B - Laranja Claro
+*/

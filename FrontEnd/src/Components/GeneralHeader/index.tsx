@@ -1,6 +1,7 @@
 import logo from '@/Media/logo.png'
 import { IoLogInOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom';
+import OrangeButton from '../buttons/OrangeButton'
 
 import style from './generalheader.module.css'
 
@@ -11,9 +12,9 @@ const GeneralHeader = () => {
                 <img className={style.logoImg} src={logo} alt="Logo TibiaHelp"/>
             </Link>
             <nav className={style.optionContainer}>
-                <button className={style.userButton}>
+                <OrangeButton className={style.userButton}>
                     <IoLogInOutline size={20} /> Login
-                </button>
+                </OrangeButton>
             </nav>
         </header>
     )
