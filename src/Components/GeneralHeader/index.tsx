@@ -3,7 +3,7 @@ import { IoLogInOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 import OrangeButton from '../buttons/OrangeButton'
 
-import style from './generalheader.module.css'
+import style from './generalHeader.module.css'
 
 const GeneralHeader = () => {
     return(
