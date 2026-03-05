@@ -33,7 +33,7 @@ const Home = () => {
                 <section className={style.aboutSection}>
                     <h2 className={style.aboutTitle}>Sobre o TibiaHelp</h2>
                     <p className={style.abountContent}>
-                        O TIBIAHELP é uma plataforma completa desenvolvida para auxiliar jogadores de Tibia em todas as suas aventuras. Aqui você encontrará ferramentas essenciais, guias detalhados e informações atualizadas sobre o mundo de Tibia.
+                        O TIBIAHELP é uma plataforma de estudo desenvolvida para auxiliar jogadores de Tibia em todas as suas aventuras. Aqui você encontrará ferramentas essenciais, guias detalhados e informações atualizadas sobre o mundo de Tibia.
                         <br/><br/>
                         Nossa missão é fornecer recursos de qualidade que facilitem o aprendizado das mecânicas do jogo, ajudem no planejamento de quests e otimizem sua experiência como jogador.
                         <br/><br/>

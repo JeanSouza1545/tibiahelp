@@ -87,9 +87,11 @@
     flex-direction: column;
     width: 1000px;
     height: fit-content;
-    border-width: 2px;
+    background-color: #111929;
+    border-width: 1px;
     border-style: solid;
     border-radius: 18px;
+    border-color: rgba(245, 158, 11, 0.4);
     padding: 15px;
 }
 
