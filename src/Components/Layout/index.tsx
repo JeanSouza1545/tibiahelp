@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom'
 import GeneralHeader from '../GeneralHeader'
-import GeneralFooter from '../generalFooter'
+import GeneralFooter from '../GeneralFooter'
 
 const Layout = () => {
     return (

@@ -1,6 +1,6 @@
 import type { IconType } from "react-icons";
 
-interface FuncionalitieButtonProps {
+interface FunctionalityButtonProps {
     Icon: IconType
     title: string
     description: string
@@ -11,7 +11,7 @@ interface FuncionalitieButtonProps {
 
 import style from './FunctionalityButton.module.css'
 
-const FuncionalitieButton = ({Icon, title, description, backgroundIcon}: FuncionalitieButtonProps) => {
+const FunctionalityButton = ({Icon, title, description, backgroundIcon}: FunctionalityButtonProps) => {
     return(
         <button type="button" className={style.button} aria-label={title}>
             <div className={style.iconContainer} style={{backgroundColor: `${backgroundIcon}`}}>
@@ -23,4 +23,4 @@ const FuncionalitieButton = ({Icon, title, description, backgroundIcon}: Funcion
     )
 }
 
-export default FuncionalitieButton
+export default FunctionalityButton

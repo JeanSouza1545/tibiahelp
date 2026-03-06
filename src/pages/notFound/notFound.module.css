@@ -1,0 +1,44 @@
+.notFoundContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.logo{
+    height: 120px;
+    width: 360px;
+    margin-top: 50px;
+}
+
+.notFoundIconContainer{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    background-color: #F54B00;
+    border-radius: 100%;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.notFoundIcon{
+    font-size: 80px;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+
+.notFoundTitle{
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 20px;
+}
+
+
+.homeLink{
+    background-color: var(--color-orange);
+}
