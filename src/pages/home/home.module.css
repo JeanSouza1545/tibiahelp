@@ -97,7 +97,7 @@
 }
 
 .aboutTitle{
-    color: #F59E0B;
+    color: var(--color-light-orange);
     font-size: 40px;
     font-family: sans-serif;
     margin: 0;

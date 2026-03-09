@@ -1,0 +1,10 @@
+:root{
+   --main-light-button-collor: #F59E0B;
+   --main-dark-button-collor: #F54B00;
+
+   --commom-text-color: #FFF;
+
+   --shadow-light-orange: rgba(234, 88, 12, 1);
+
+   --main-linear-gradient: linear-gradient(to right, var(--main-light-button-collor) 0%, var(--main-dark-button-collor) 100%)
+}
