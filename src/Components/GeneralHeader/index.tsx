@@ -1,7 +1,7 @@
 import logo from '@/Media/logo.png'
 import { IoLogInOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom';
-import OrangeButton from '../buttons/OrangeButton'
+import OrangeButton from '../Buttons/OrangeButton'
 
 import style from './generalheader.module.css'
 
