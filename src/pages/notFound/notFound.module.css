@@ -41,14 +41,14 @@ h1{
     color: var(--main-light-button-collor);
     margin-top: 20px;
     margin: 0;
-    font-family: var(--text-main-style);
+    font-family: var(--text-main-family);
 }
 
 p {
     margin: 0;
     height: fit-content;
     font-size: var(--text-font-size-lg);
-    font-family: var(--text-main-style);
+    font-family: var(--text-main-family);
     font-weight: bold;
 }
 
@@ -70,4 +70,5 @@ p {
 
 .homeLink:hover {
     text-decoration: underline;
+    background: var(--main-hover-gradient);
 }

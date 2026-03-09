@@ -1,24 +1,27 @@
 .mainContainer{
+    display: flex;
     width: 100%;
     height: fit-content;
-    display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 50px;
 }
 
 .homeTitle {
-    background: linear-gradient(to right, #F59E0B 0%, #F54B00 100%);
-    background-clip: text;
-    font-size: 70px;
-    font-family: 'inter', sans-serif;
-    -webkit-background-clip: text;
-    color: transparent;
     width: fit-content;
+    background: var(--main-linear-gradient);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-size: var(--text-font-size-exlg);
+    font-family: var(--text-main-family);
 }
 
 .titleDesc {
-    font-size: 25px;
-    font-family: 'inter', sans-serif;
+    padding-top: 10px;
+    font-size: var(--text-font-size-lg);
+    font-family: var(--text-main-family);
+    font-weight: bold;
     text-align: center;
 }
 
@@ -27,6 +30,7 @@
     flex-direction: row;
     width: 100%;
     justify-content: center;
+    padding-top: 20px;
     gap: 20px;
 }
 
@@ -37,7 +41,7 @@
     color: #FFF;
     font-weight: bold;
     justify-content: center;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
 }
 
 .navContainer .guidesButton {
@@ -45,28 +49,31 @@
     height: 50px;
 }
 
-.funcionalitiesContainer {
+.funcionalityContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: fit-content;
-    /* background: red; */
+    height: 500px;
     margin-bottom: 50px;
     overflow: auto;
 }
 
-.funcionalitiesTitle {
+.funcionalityTitle {
     font-size: 35px;
-    font-family: sans-serif;
-    color: #F59E0B;
+    font-family: var(--text-main-family);
+    color: var( --title-text-color);
     text-align: center;
 }
 
-.funcionalitiesNavigation{
+.funcionalityNavigation{
+    display: flex;
+    flex-direction: column;
     width: fit-content;
     height: fit-content;
     align-items: center;
+    margin-bottom: 50px;
+    /* overflow: auto;     */
 }
 
 .optionContainer {
@@ -99,11 +106,11 @@
 .aboutTitle{
     color: var(--color-light-orange);
     font-size: 40px;
-    font-family: sans-serif;
+    font-family: var(--text-main-family);
     margin: 0;
 }
 
 .abountContent{
-    font-size: 20px;
-    font-family: sans-serif;
+    font-size: var(--text-font-size-lg);
+    font-family: var(--text-main-family);
 }

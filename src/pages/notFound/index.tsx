@@ -18,7 +18,7 @@ const NotFound = () => {
                 Página movida ou não encontrada!
             </p>
             <Link to="/home" className={style.homeLink}>
-                <IoHome />Voltar para Home
+                <IoHome /> Voltar para Home
             </Link>
         </div>
     )

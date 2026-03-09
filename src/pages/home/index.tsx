@@ -18,9 +18,9 @@ const Home = () => {
                 <OrangeButton className={style.toolsButton}> Explorar Ferramentas </OrangeButton>
                 <WhiteButton className={style.guidesButton}> Ver Guias </WhiteButton>
             </nav>
-            <div className={style.funcionalitiesContainer} >
-                <nav className={style.funcionalitiesNavigation}>
-                    <h2 className={style.funcionalitiesTitle}>Principais Funcionalidades</h2>
+            {/* <div className={style.funcionalityContainer} > */}
+                <nav className={style.funcionalityNavigation}>
+                    <h2 className={style.funcionalityTitle}>Principais Funcionalidades</h2>
                     <div className={style.optionContainer}>
                         <FuncionalityButton Icon={IoSearch} title="Buscar Quests" description="Encontre informações detalhadas sobre todas as quests do Tibia" />
                         <FuncionalityButton Icon={IoMapOutline} title="Mapa Interativo" description="Navegue por mapas detalhados de todas as regiões de Tibia" backgroundIcon="#0091C2" />
@@ -28,7 +28,7 @@ const Home = () => {
                         <FuncionalityButton Icon={IoLibrary} title="Guias" description="Aprenda todas as mecânicas e estratégias do jogo" backgroundIcon="#00BB59"/>
                     </div>
                 </nav>
-            </div>
+            {/* </div> */}
             <div className={style.aboutContainer}>
                 <section className={style.aboutSection}>
                     <h2 className={style.aboutTitle}>Sobre o TibiaHelp</h2>
