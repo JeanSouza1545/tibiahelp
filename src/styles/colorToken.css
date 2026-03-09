@@ -1,10 +1,13 @@
 :root{
    --main-light-button-collor: #F59E0B;
+   --main-medium-button-collor: #ff6600;
    --main-dark-button-collor: #F54B00;
 
    --commom-text-color: #FFF;
+   --title-text-color: #F59E0B;
 
    --shadow-light-orange: rgba(234, 88, 12, 1);
 
-   --main-linear-gradient: linear-gradient(to right, var(--main-light-button-collor) 0%, var(--main-dark-button-collor) 100%)
+   --main-linear-gradient: linear-gradient(to right, var(--main-light-button-collor) 0%, var(--main-dark-button-collor) 100%);
+   --main-hover-gradient: linear-gradient(to right, var( --main-medium-button-collor) 0%, var(--main-dark-button-collor) 100%);
 }
