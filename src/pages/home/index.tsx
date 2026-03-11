@@ -1,7 +1,7 @@
 import style from "./home.module.css"
-import OrangeButton from "../../Components/Buttons/OrangeButton"
-import WhiteButton from "../../Components/Buttons/WhiteButton"
-import FuncionalityButton from "@/Components/Buttons/FunctionalityButton"
+import OrangeButton from "../../Components/buttons/OrangeButton"
+import WhiteButton from "../../Components/buttons/WhiteButton"
+import FuncionalityButton from "@/Components/buttons/FunctionalityButton"
 
 import { IoSearch, IoMapOutline, IoCalculator, IoLibrary } from "react-icons/io5";
 
