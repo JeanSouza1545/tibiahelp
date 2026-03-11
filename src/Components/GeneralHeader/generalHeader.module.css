@@ -5,11 +5,10 @@
     height: 50px;
     width: 100%;
     align-items: center;
-    background: #111929;
-    /* box-shadow: 0px 10px 5px rgba(255, 140, 0, 0.2); */
+    background: var(--color-bg-secondary);
     box-shadow:
-    0px 8px 60px rgba(0,0,0,0.2),
-    0px 0px 60px rgba(255,140,0, 0.6);
+        0px 8px 60px var(--color-shadow-soft),
+        0px 0px 60px var(--color-shadow-orange);
 }
 
 .logoContainer{
@@ -33,16 +32,35 @@
     height: 100%;
     justify-content: flex-end;
     align-items: center;
-    /* background-color: red; */
+    gap: 12px;
+}
+
+.themeToggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: var(--border-radius-button);
+    background: transparent;
+    color: var(--color-text-primary);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.themeToggle:hover {
+    background: rgba(245, 158, 11, 0.2);
 }
 
 .userButton{
     justify-content: space-evenly;
-    margin-right: 40px;
+    margin-right: 20px;
 }
 
 .userButton:hover {
-    background: linear-gradient(to right, #ff6600 0%, #ea400c 100%);
+    background: var(--main-hover-gradient);
     cursor: pointer;
 }
 

@@ -3,8 +3,8 @@
     flex-direction: column;
     width: 100%;
     height: 100px;
-    background-color: #111929;
-    border-top: 1px solid rgba(245, 158, 11, 0.4);
+    background-color: var(--color-bg-secondary);
+    border-top: 1px solid var(--color-border);
     margin-top: 30px;
     justify-content: center;
     align-items: center;
@@ -13,7 +13,7 @@
 .footerText{
     font-size: var(--text-font-size-md);
     font-family: var(--text-main-family);
-    color: #bebebe;
+    color: var(--color-text-secondary);
     text-align: center;
     margin: 0;
     margin-bottom: 10px;
@@ -22,7 +22,7 @@
 .smallFooterText{
     font-size: var(--text-font-size-sm);
     font-family: var(--text-main-family);
-    color: #bebebe;
+    color: var(--color-text-secondary);
     text-align: center;
     margin: 0;
 }

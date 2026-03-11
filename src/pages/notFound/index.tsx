@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const NotFound = () => {
     return(
         <div className={style.notFoundContainer}>
-            <img src={logo} className={style.logo}></img>
+            <img src={logo} className={style.logo} alt="Logo TibiaHelp"/>
             <div className={style.notFoundIconContainer}>
                 <IoWarningOutline size={70}/>
             </div>

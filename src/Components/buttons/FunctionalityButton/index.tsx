@@ -1,26 +1,28 @@
 import type { IconType } from "react-icons";
+import { Link } from "react-router-dom";
+
+import style from './FunctionalityButton.module.css'
 
 interface FunctionalityButtonProps {
     Icon: IconType
     title: string
     description: string
+    to: string
     iconSize?: number
     iconColor?: string
     backgroundIcon?: string
 }
 
-import style from './FunctionalityButton.module.css'
-
-const FunctionalityButton = ({Icon, title, description, backgroundIcon}: FunctionalityButtonProps) => {
-    return(
-        <button type="button" className={style.button} aria-label={title}>
-            <div className={style.iconContainer} style={{backgroundColor: `${backgroundIcon}`}}>
-                <Icon color="white" size={45} />
+const FunctionalityButton = ({Icon, title, description, to, backgroundIcon, iconSize = 45}: FunctionalityButtonProps) => {
+    return (
+        <Link to={to} className={style.link} aria-label={title}>
+            <div className={style.iconContainer} style={backgroundIcon ? { backgroundColor: backgroundIcon } : undefined}>
+                <Icon color="white" size={iconSize} />
             </div>
             <span className={style.title}>{title}</span>
             <p className={style.description}>{description}</p>
-        </button>
-    )
+        </Link>
+    );
 }
 
 export default FunctionalityButton

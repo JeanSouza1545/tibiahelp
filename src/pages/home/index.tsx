@@ -1,7 +1,7 @@
 import style from "./home.module.css"
 import OrangeButton from "../../Components/buttons/OrangeButton"
 import WhiteButton from "../../Components/buttons/WhiteButton"
-import FuncionalityButton from "@/Components/buttons/FunctionalityButton"
+import FunctionalityButton from "@/Components/buttons/FunctionalityButton"
 
 import { IoSearch, IoMapOutline, IoCalculator, IoLibrary } from "react-icons/io5";
 
@@ -15,24 +15,24 @@ const Home = () => {
                 Sua fonte completa de ajuda para Tibia! Ferramentas, guias e recursos <br/>para melhorar sua experiência no jogo.
             </p>
             <nav className={style.navContainer}>
-                <OrangeButton className={style.toolsButton}> Explorar Ferramentas </OrangeButton>
-                <WhiteButton className={style.guidesButton}> Ver Guias </WhiteButton>
+                <OrangeButton className={style.toolsButton}>Explorar Ferramentas</OrangeButton>
+                <WhiteButton className={style.guidesButton}>Ver Guias</WhiteButton>
             </nav>
-            {/* <div className={style.funcionalityContainer} > */}
-                <nav className={style.funcionalityNavigation}>
-                    <h2 className={style.funcionalityTitle}>Principais Funcionalidades</h2>
-                    <div className={style.optionContainer}>
-                        <FuncionalityButton Icon={IoSearch} title="Buscar Quests" description="Encontre informações detalhadas sobre todas as quests do Tibia" />
-                        <FuncionalityButton Icon={IoMapOutline} title="Mapa Interativo" description="Navegue por mapas detalhados de todas as regiões de Tibia" backgroundIcon="#0091C2" />
-                        <FuncionalityButton Icon={IoCalculator} title="Calculadora" description="Calcule dano, experiência e otimize seu personagem" backgroundIcon="#F0165D"/>
-                        <FuncionalityButton Icon={IoLibrary} title="Guias" description="Aprenda todas as mecânicas e estratégias do jogo" backgroundIcon="#00BB59"/>
-                    </div>
-                </nav>
-            {/* </div> */}
+
+            <nav className={style.funcionalityNavigation}>
+                <h2 className={style.funcionalityTitle}>Principais Funcionalidades</h2>
+                <div className={style.optionContainer}>
+                    <FunctionalityButton Icon={IoSearch} title="Buscar Quests" description="Encontre informações detalhadas sobre todas as quests do Tibia" to="/" iconSize={54} />
+                    <FunctionalityButton Icon={IoMapOutline} title="Mapa Interativo" description="Navegue por mapas detalhados de todas as regiões de Tibia" backgroundIcon="#0091C2" to="/" />
+                    <FunctionalityButton Icon={IoCalculator} title="Calculadora" description="Calcule dano, experiência e otimize seu personagem" backgroundIcon="#F0165D" to="/exercise-weapon"/>
+                    <FunctionalityButton Icon={IoLibrary} title="Guias" description="Aprenda todas as mecânicas e estratégias do jogo" backgroundIcon="#00BB59" to="/" />
+                </div>
+            </nav>
+
             <div className={style.aboutContainer}>
                 <section className={style.aboutSection}>
                     <h2 className={style.aboutTitle}>Sobre o TibiaHelp</h2>
-                    <p className={style.abountContent}>
+                    <p className={style.aboutContent}>
                         O TIBIAHELP é uma plataforma de estudo desenvolvida para auxiliar jogadores de Tibia em todas as suas aventuras. Aqui você encontrará ferramentas essenciais, guias detalhados e informações atualizadas sobre o mundo de Tibia.
                         <br/><br/>
                         Nossa missão é fornecer recursos de qualidade que facilitem o aprendizado das mecânicas do jogo, ajudem no planejamento de quests e otimizem sua experiência como jogador.

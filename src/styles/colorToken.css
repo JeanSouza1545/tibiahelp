@@ -1,13 +1,30 @@
-:root{
-   --main-light-button-collor: #F59E0B;
-   --main-medium-button-collor: #ff6600;
-   --main-dark-button-collor: #F54B00;
+:root {
+    /* Brand colors */
+    --main-light-button-color: #F59E0B;
+    --main-medium-button-color: #ff6600;
+    --main-dark-button-color: #F54B00;
+    --color-light-orange: #F59E0B;
 
-   --commom-text-color: #FFF;
-   --title-text-color: #F59E0B;
+    /* Semantic colors (dark theme default) */
+    --color-bg-primary: #13151A;
+    --color-bg-primary-gradient: radial-gradient(circle at center, #2a3a5f 0%, #13151A 100%);
+    --color-bg-secondary: #111929;
+    --color-text-primary: #FFF;
+    --color-text-secondary: #bebebe;
+    --color-border: rgba(245, 158, 11, 0.4);
+    --color-border-hover: rgba(245, 75, 0, 0.6);
+    --color-shadow: rgba(234, 88, 12, 1);
+    --color-shadow-soft: rgba(0, 0, 0, 0.2);
+    --color-shadow-orange: rgba(255, 140, 0, 0.6);
+    --color-surface-contrast: #FFF;
+    --color-surface-contrast-hover: #b6b6b6;
 
-   --shadow-light-orange: rgba(234, 88, 12, 1);
+    /* Aliases (brand) */
+    --common-text-color: var(--color-text-primary);
+    --title-text-color: var(--color-light-orange);
+    --shadow-light-orange: var(--color-shadow);
 
-   --main-linear-gradient: linear-gradient(to right, var(--main-light-button-collor) 0%, var(--main-dark-button-collor) 100%);
-   --main-hover-gradient: linear-gradient(to right, var( --main-medium-button-collor) 0%, var(--main-dark-button-collor) 100%);
+    /* Gradients */
+    --main-linear-gradient: linear-gradient(to right, var(--main-light-button-color) 0%, var(--main-dark-button-color) 100%);
+    --main-hover-gradient: linear-gradient(to right, var(--main-medium-button-color) 0%, var(--main-dark-button-color) 100%);
 }

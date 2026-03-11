@@ -29,7 +29,7 @@
 .notFoundIcon{
     display: flex;
     font-size: 80px;
-    color: #fff;
+    color: var(--color-text-primary);
     justify-content: center;
     align-items: center;
 }
@@ -38,7 +38,7 @@ h1{
     height: fit-content;
     font-size: var(--text-font-size-exlg);
     font-weight: bold;
-    color: var(--main-light-button-collor);
+    color: var(--title-text-color);
     margin-top: 20px;
     margin: 0;
     font-family: var(--text-main-family);
@@ -64,7 +64,7 @@ p {
     justify-content: space-evenly;
     background: var(--main-linear-gradient);
     text-decoration: none;
-    color: var(--commom-text-color);
+    color: var(--common-text-color);
     margin-top: 20px;
 }
 

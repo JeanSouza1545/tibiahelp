@@ -5,9 +5,9 @@
     font-size: 14px;
     font-family: 'inter', sans-serif;
     font-weight: 600;
-    color: #FFF;
+    color: var(--common-text-color);
     align-items: center;
-    background: linear-gradient(to right, #F59E0B 0%, #F54B00 100%);
+    background: var(--main-linear-gradient);
     border-radius: 8px;
     padding: 0;
     border: none;
@@ -15,6 +15,6 @@
 }
 
 .button:hover {
-    background: linear-gradient(to right, #ff6600 0%, #ea400c 100%);
+    background: var(--main-hover-gradient);
     cursor: pointer;
 }

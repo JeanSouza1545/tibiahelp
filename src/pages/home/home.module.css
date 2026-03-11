@@ -38,7 +38,7 @@
     width: 250px;
     height: 50px;
     font-size: large;
-    color: #FFF;
+    color: var(--color-text-primary);
     font-weight: bold;
     justify-content: center;
     /* margin-bottom: 50px; */
@@ -73,7 +73,6 @@
     height: fit-content;
     align-items: center;
     margin-bottom: 50px;
-    /* overflow: auto;     */
 }
 
 .optionContainer {
@@ -95,11 +94,11 @@
     flex-direction: column;
     width: 1000px;
     height: fit-content;
-    background-color: #111929;
+    background-color: var(--color-bg-secondary);
     border-width: 1px;
     border-style: solid;
     border-radius: 18px;
-    border-color: rgba(245, 158, 11, 0.4);
+    border-color: var(--color-border);
     padding: 15px;
 }
 
@@ -110,7 +109,9 @@
     margin: 0;
 }
 
-.abountContent{
+.aboutContent{
     font-size: var(--text-font-size-lg);
     font-family: var(--text-main-family);
+    font-weight: lighter;
+    margin-top: 10px;
 }

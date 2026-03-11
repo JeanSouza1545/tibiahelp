@@ -5,24 +5,20 @@
     font-size: 20px;
     font-family: 'inter', sans-serif;
     font-weight: bold;
-    color: #F59E0B;
+    color: var(--title-text-color);
     align-items: center;
     justify-content: center;
-    background: #FFF;
+    background: var(--color-surface-contrast);
     border-radius: 8px;
     padding: 0;
     border-width: 2px;
     border-style: solid;
-    border-color: #F59E0B;
+    border-color: var(--main-light-button-color);
     transition: 0.2s;
 }
 
 .button:hover {
-    background: #b6b6b6;
+    background: var(--color-surface-contrast-hover);
     cursor: pointer;
-    color: #ea400c;
+    color: var(--main-dark-button-color);
 }
-
-/* 
-    F59E0B - Laranja Claro
-*/

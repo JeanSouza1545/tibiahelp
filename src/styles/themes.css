@@ -1,0 +1,14 @@
+[data-theme="light"] {
+    --color-bg-primary: #f5f5f5;
+    --color-bg-primary-gradient: radial-gradient(circle at center, #e8e8e8 0%, #f5f5f5 100%);
+    --color-bg-secondary: #ffffff;
+    --color-text-primary: #1a1a1a;
+    --color-text-secondary: #4a4a4a;
+    --color-border: rgba(245, 158, 11, 0.5);
+    --color-border-hover: rgba(245, 75, 0, 0.7);
+    --color-shadow: rgba(234, 88, 12, 0.5);
+    --color-shadow-soft: rgba(0, 0, 0, 0.1);
+    --color-shadow-orange: rgba(255, 140, 0, 0.3);
+    --color-surface-contrast: #ffffff;
+    --color-surface-contrast-hover: #e0e0e0;
+}
