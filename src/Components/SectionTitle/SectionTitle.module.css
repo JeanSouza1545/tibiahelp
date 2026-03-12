@@ -1,0 +1,16 @@
+.title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    font-family: var(--text-main-family);
+    font-weight: bold;
+    color: var(--title-text-color);
+    margin: 0 0 16px 0;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

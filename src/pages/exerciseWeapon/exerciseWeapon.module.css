@@ -1,19 +1,127 @@
 .mainContainer {
     display: flex;
     width: 100%;
-    height: 100%;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 50px;
+    padding: 40px 24px 60px;
+}
+
+.pageHeader {
+    text-align: center;
+    margin-bottom: 24px;
 }
 
 .pageTitle {
     width: fit-content;
+    margin: 0 auto;
     background: var(--main-linear-gradient);
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
     font-size: var(--text-font-size-exlg);
     font-family: var(--text-main-family);
+}
+
+.tagline {
+    margin: 12px 0 0 0;
+    font-size: var(--text-font-size-lg);
+    font-family: var(--text-main-family);
+    color: var(--color-text-secondary);
+}
+
+.contentGrid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 32px;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 40px;
+}
+
+.configSection {
+    width: 100%;
+}
+
+.configCard {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.resultsSection {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.detalhamentoSection {
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 40px;
+}
+
+.detalhamentoCards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.dicasSection {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.dicasCard {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.dicasList {
+    margin: 0;
+    padding-left: 24px;
+    font-size: var(--text-font-size-md);
+    font-family: var(--text-main-family);
+    color: var(--color-text-primary);
+    line-height: 1.8;
+}
+
+.dicasList li {
+    margin-bottom: 8px;
+}
+
+.dicasList li::marker {
+    color: var(--title-text-color);
+}
+
+.placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    font-size: var(--text-font-size-lg);
+    font-family: var(--text-main-family);
+    color: var(--color-text-secondary);
+}
+
+@media (max-width: 1024px) {
+    .contentGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .detalhamentoCards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .detalhamentoCards {
+        grid-template-columns: 1fr;
+    }
+
+    .pageTitle {
+        font-size: var(--text-font-size-lg);
+    }
 }
