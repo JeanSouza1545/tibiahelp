@@ -11,7 +11,10 @@ import {
 import Tabs, { type TabItem } from '@/Components/Tabs'
 import InfoCard from '@/Components/InfoCard'
 import SectionTitle from '@/Components/SectionTitle'
+import ClassSelector, { type CharacterClass } from '@/Components/ClassSelector'
+import BonusSelector, { type BonusSelection } from '@/Components/BonusSelector'
 import FormField from '@/Components/FormField'
+import SkillTypeSelector, { type SkillType } from '@/Components/SkillTypeSelector'
 import Select from '@/Components/Select'
 import Input from '@/Components/Input'
 import Slider from '@/Components/Slider'
@@ -23,9 +26,6 @@ const TABS: TabItem[] = [
     { id: 'comparacao', label: 'Comparação', icon: IoStatsChart },
 ]
 
-const SKILL_TYPE_OPTIONS = [
-    { value: 'melee', label: 'Melee (Sword/Axe/Club)' },
-]
 
 const WEAPON_OPTIONS = [
     { value: '1h', label: 'Exercise Weapon (1h) - 262.500 gp' },
@@ -40,6 +40,52 @@ const DICAS = [
 
 const ExerciseWeapon = () => {
     const [activeTab, setActiveTab] = useState('calculadora')
+    const [characterClass, setCharacterClass] = useState<CharacterClass>('knight')
+    const [bonusSelection, setBonusSelection] = useState<BonusSelection>({
+        dummy: false,
+        doubleXp: false,
+    })
+    const [loyaltyBonus, setLoyaltyBonus] = useState(0)
+    const [skillType, setSkillType] = useState<SkillType>('melee')
+    const [skillCurrent, setSkillCurrent] = useState(80)
+    const [skillTarget, setSkillTarget] = useState(100)
+    const [percentual, setPercentual] = useState<number>(0)
+
+    const handleSkillCurrentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const val = e.target.value
+        if (val === '') {
+            setSkillCurrent(0)
+            return
+        }
+        const num = parseInt(val, 10)
+        if (!Number.isNaN(num) && num >= 0 && num <= 999) {
+            setSkillCurrent(num)
+        }
+    }
+
+    const handleSkillTargetChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const val = e.target.value
+        if (val === '') {
+            setSkillTarget(0)
+            return
+        }
+        const num = parseInt(val, 10)
+        if (!Number.isNaN(num) && num >= 0 && num <= 999) {
+            setSkillTarget(num)
+        }
+    }
+
+    const handlePercentualChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const val = e.target.value
+        if (val === '') {
+            setPercentual(0)
+            return
+        }
+        const num = parseFloat(val.replace(',', '.'))
+        if (!Number.isNaN(num) && num >= 0 && num <= 100) {
+            setPercentual(Math.round(num * 100) / 100)
+        }
+    }
 
     return (
         <div className={style.mainContainer}>
@@ -47,9 +93,18 @@ const ExerciseWeapon = () => {
                 <h1 className={style.pageTitle}>
                     Calculadora de Exercise Weapons
                 </h1>
-                <p className={style.tagline}>
-                    Planeje seu treinamento de skills e otimize seus recursos
-                </p>
+                <div className={style.taglineRow}>
+                    <p className={style.tagline}>
+                        Planeje seu treinamento de skills e otimize seus recursos
+                    </p>
+                    <span
+                        className={style.constructionBadge}
+                        role="status"
+                        onClick={() => alert('Em Construção')}
+                    >
+                        Em Construção
+                    </span>
+                </div>
             </header>
 
             <Tabs tabs={TABS} activeId={activeTab} onChange={setActiveTab} />
@@ -58,21 +113,76 @@ const ExerciseWeapon = () => {
                 <>
                     <div className={style.contentGrid}>
                         <section className={style.configSection}>
-                            <SectionTitle icon={IoFlashOutline}>
-                                Configuração de Treinamento
-                            </SectionTitle>
                             <div className={style.configCard}>
-                                <FormField label="Tipo de Skill">
-                                    <Select
-                                        value="melee"
-                                        options={SKILL_TYPE_OPTIONS}
+                                <div className={style.configCardTitle}>
+                                    <SectionTitle icon={IoFlashOutline}>
+                                        Configuração de Treinamento
+                                    </SectionTitle>
+                                </div>
+                                <div className={style.classAndBonusRow}>
+                                    <ClassSelector
+                                        value={characterClass}
+                                        onChange={setCharacterClass}
                                     />
-                                </FormField>
-                                <FormField label="Skill Atual">
-                                    <Input value="80" readOnly />
-                                </FormField>
-                                <FormField label="Loyalty Bonus: 0%">
-                                    <Slider value={0} min={0} max={50} />
+                                    <BonusSelector
+                                        value={bonusSelection}
+                                        onChange={setBonusSelection}
+                                    />
+                                </div>
+                                <div className={style.skillFieldsRow}>
+                                    <FormField label="Tipo de Skill">
+                                        <SkillTypeSelector
+                                            value={skillType}
+                                            onChange={setSkillType}
+                                            className={style.skillTypeSelect}
+                                        />
+                                    </FormField>
+                                    <FormField label="Skill Atual">
+                                        <div className={style.skillInputWrapper}>
+                                            <Input
+                                                type="number"
+                                                min={0}
+                                                max={999}
+                                                step={1}
+                                                value={skillCurrent}
+                                                onChange={handleSkillCurrentChange}
+                                                inputMode="numeric"
+                                            />
+                                        </div>
+                                    </FormField>
+                                    <FormField label="Percentual">
+                                        <div className={style.percentualInputWrapper}>
+                                            <Input
+                                                type="number"
+                                                min={0}
+                                                max={100}
+                                                step={0.01}
+                                                value={percentual}
+                                                onChange={handlePercentualChange}
+                                            />
+                                        </div>
+                                    </FormField>
+                                    <FormField label="Skill Desejado">
+                                        <div className={style.skillInputWrapper}>
+                                            <Input
+                                                type="number"
+                                                min={0}
+                                                max={999}
+                                                step={1}
+                                                value={skillTarget}
+                                                onChange={handleSkillTargetChange}
+                                                inputMode="numeric"
+                                            />
+                                        </div>
+                                    </FormField>
+                                </div>
+                                <FormField label={`Loyalty Bonus: ${loyaltyBonus}%`}>
+                                    <Slider
+                                        value={loyaltyBonus}
+                                        min={0}
+                                        max={50}
+                                        onChange={setLoyaltyBonus}
+                                    />
                                 </FormField>
                                 <FormField label="Tipo de Exercise Weapon">
                                     <Select
@@ -80,14 +190,12 @@ const ExerciseWeapon = () => {
                                         options={WEAPON_OPTIONS}
                                     />
                                 </FormField>
-                                <FormField label="Skill Desejado">
-                                    <Input value="100" readOnly />
-                                </FormField>
                                 <ProgressBar
-                                    leftLabel="Skill 80"
-                                    rightLabel="Skill 100"
-                                    progress={0.2}
-                                    subtitle="+20 levels para treinar"
+                                    leftLabel={`Skill ${skillCurrent}`}
+                                    rightLabel={`Skill ${skillTarget}`}
+                                    current={skillCurrent}
+                                    target={skillTarget}
+                                    subtitle={`+${Math.max(0, skillTarget - skillCurrent)} levels para treinar`}
                                 />
                             </div>
                         </section>
@@ -142,7 +250,7 @@ const ExerciseWeapon = () => {
                             />
                             <InfoCard
                                 title="Loyalty Bonus Ativo"
-                                value="0%"
+                                value={`${loyaltyBonus}%`}
                                 subtitle="skill gain extra"
                             />
                         </div>

@@ -7,6 +7,7 @@
     font-weight: 600;
     color: var(--common-text-color);
     align-items: center;
+    justify-content: center;
     background: var(--main-linear-gradient);
     border-radius: 8px;
     padding: 0;

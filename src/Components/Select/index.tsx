@@ -7,14 +7,15 @@ interface SelectProps {
     value: string
     options: SelectOption[]
     onChange?: (value: string) => void
+    className?: string
 }
 
 import style from './Select.module.css'
 
-const Select = ({ value, options, onChange }: SelectProps) => {
+const Select = ({ value, options, onChange, className }: SelectProps) => {
     return (
         <select
-            className={style.select}
+            className={`${style.select} ${className ?? ''}`.trim()}
             value={value}
             onChange={(e) => onChange?.(e.target.value)}
         >

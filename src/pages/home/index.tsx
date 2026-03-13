@@ -12,20 +12,24 @@ const Home = () => {
                 Bem-vindo ao TibiaHelp
             </h1>
             <p className={style.titleDesc}>
-                Sua fonte completa de ajuda para Tibia! Ferramentas, guias e recursos <br/>para melhorar sua experiência no jogo.
+                Sua fonte completa de ajuda para Tibia! Ferramentas, guias e recursos para melhorar sua experiência no jogo.
             </p>
             <nav className={style.navContainer}>
-                <OrangeButton className={style.toolsButton}>Explorar Ferramentas</OrangeButton>
-                <WhiteButton className={style.guidesButton}>Ver Guias</WhiteButton>
+                <OrangeButton className={style.toolsButton} onClick={() => alert('Em Breve')}>
+                    Explorar Ferramentas
+                </OrangeButton>
+                <WhiteButton className={style.guidesButton} onClick={() => alert('Em Breve')}>
+                    Ver Guias
+                </WhiteButton>
             </nav>
 
             <nav className={style.funcionalityNavigation}>
                 <h2 className={style.funcionalityTitle}>Principais Funcionalidades</h2>
                 <div className={style.optionContainer}>
-                    <FunctionalityButton Icon={IoSearch} title="Buscar Quests" description="Encontre informações detalhadas sobre todas as quests do Tibia" to="/" iconSize={54} />
-                    <FunctionalityButton Icon={IoMapOutline} title="Mapa Interativo" description="Navegue por mapas detalhados de todas as regiões de Tibia" backgroundIcon="#0091C2" to="/" />
+                    <FunctionalityButton Icon={IoSearch} title="Buscar Quests" description="Encontre informações detalhadas sobre todas as quests do Tibia" to="/" iconSize={54} comingSoon />
+                    <FunctionalityButton Icon={IoMapOutline} title="Mapa Interativo" description="Navegue por mapas detalhados de todas as regiões de Tibia" backgroundIcon="#0091C2" to="/" comingSoon />
                     <FunctionalityButton Icon={IoCalculator} title="Calculadora" description="Calcule dano, experiência e otimize seu personagem" backgroundIcon="#F0165D" to="/exercise-weapon"/>
-                    <FunctionalityButton Icon={IoLibrary} title="Guias" description="Aprenda todas as mecânicas e estratégias do jogo" backgroundIcon="#00BB59" to="/" />
+                    <FunctionalityButton Icon={IoLibrary} title="Guias" description="Aprenda todas as mecânicas e estratégias do jogo" backgroundIcon="#00BB59" to="/" comingSoon />
                 </div>
             </nav>
 

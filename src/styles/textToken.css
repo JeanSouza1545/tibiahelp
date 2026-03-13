@@ -2,9 +2,13 @@
     /* Font Styles */
     --text-main-family: sans-serif;
 
-    /* Size */
+    /* Size - escala proporcional para leitura confortável */
+    --text-font-size-xs: 11px;
     --text-font-size-sm: 12px;
     --text-font-size-md: 16px;
-    --text-font-size-lg: 20px;
-    --text-font-size-exlg: 80px;
+    --text-font-size-lg: 18px;
+    --text-font-size-xl: 22px;
+    --text-font-size-2xl: 28px;
+    --text-font-size-hero: 40px;
+    --text-font-size-exlg: 64px;
 }

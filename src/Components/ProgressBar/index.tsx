@@ -3,12 +3,13 @@ import style from './ProgressBar.module.css'
 interface ProgressBarProps {
     leftLabel: string
     rightLabel: string
-    progress: number
+    current: number
+    target: number
     subtitle?: string
 }
 
-const ProgressBar = ({ leftLabel, rightLabel, progress, subtitle }: ProgressBarProps) => {
-    const percentage = Math.min(100, Math.max(0, progress * 100))
+const ProgressBar = ({ leftLabel, rightLabel, current, target, subtitle }: ProgressBarProps) => {
+    const percentage = target > 0 ? Math.min(100, Math.max(0, (current / target) * 100)) : 0
 
     return (
         <div className={style.container}>

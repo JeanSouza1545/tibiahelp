@@ -39,17 +39,35 @@
 
 .link .title {
     color: var(--title-text-color);
-    font-family: sans-serif;
-    font-size: 25px;
-    font-weight: bold;
-    margin-top: 20px;
+    font-family: var(--text-main-family);
+    font-size: var(--text-font-size-xl);
+    font-weight: 600;
+    margin-top: 16px;
 }
 
 .link .description {
     color: var(--color-text-secondary);
     font-family: var(--text-main-family);
-    font-size: 16px;
+    font-size: var(--text-font-size-md);
+    line-height: 1.5;
     text-align: start;
-    margin-top: 10px;
+    margin-top: 8px;
+}
+
+.link {
+    position: relative;
+}
+
+.comingSoon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: var(--text-font-size-sm);
+    font-family: var(--text-main-family);
+    font-weight: 600;
+    color: var(--title-text-color);
+    background-color: rgba(245, 158, 11, 0.2);
+    padding: 4px 8px;
+    border-radius: 6px;
 }
 

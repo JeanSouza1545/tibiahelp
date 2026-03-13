@@ -18,6 +18,7 @@
     --color-shadow-orange: rgba(255, 140, 0, 0.6);
     --color-surface-contrast: #FFF;
     --color-surface-contrast-hover: #b6b6b6;
+    --color-progress-track: #1a2340;
 
     /* Aliases (brand) */
     --common-text-color: var(--color-text-primary);

@@ -1,0 +1,64 @@
+.group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 80px;
+    min-width: 80px;
+    max-width: 100px;
+    padding: 12px 8px;
+    background-color: var(--color-progress-track);
+    border: 2px solid var(--color-border);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.option:hover {
+    border-color: var(--color-border-hover);
+}
+
+.selected {
+    border-color: var(--title-text-color);
+    box-shadow: 0 0 0 1px var(--title-text-color);
+    background-color: rgba(245, 158, 11, 0.15);
+}
+
+.option.selected:hover {
+    border-color: var(--title-text-color);
+}
+
+.input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.iconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.label {
+    font-size: var(--text-font-size-sm);
+    font-family: var(--text-main-family);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    text-align: center;
+}
