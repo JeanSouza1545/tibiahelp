@@ -4,12 +4,17 @@
     --color-bg-secondary: #FDFBF7;
     --color-progress-track: #EDE9E3;
     --color-text-primary: #2D2A26;
-    --color-text-secondary: #6B6560;
-    --color-border: rgba(245, 158, 11, 0.4);
+    --color-text-secondary: #5C5651;
+    --color-border: rgba(245, 158, 11, 0.35);
     --color-border-hover: rgba(245, 75, 0, 0.55);
+    --color-card-border: rgba(245, 158, 11, 0.2);
     --color-shadow: rgba(234, 88, 12, 0.35);
-    --color-shadow-soft: rgba(0, 0, 0, 0.06);
+    --color-shadow-soft: rgba(0, 0, 0, 0.04);
+    --color-card-shadow: 0 2px 8px rgba(107, 101, 96, 0.06);
+    --color-card-gradient-end: rgba(237, 233, 227, 0.5);
+    --color-dropdown-shadow: rgba(107, 101, 96, 0.1);
     --color-shadow-orange: rgba(255, 140, 0, 0.2);
     --color-surface-contrast: #FDFBF7;
     --color-surface-contrast-hover: #EFEBE4;
+    --color-weapons-column-bg: rgba(107, 101, 96, 0.06);
 }

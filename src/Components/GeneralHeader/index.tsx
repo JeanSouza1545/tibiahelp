@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import logo from '@/Media/logo.png'
 import { IoCalculator, IoLogInOutline, IoMoonOutline, IoSunnyOutline } from "react-icons/io5"
 import { Link, useLocation } from 'react-router-dom'
@@ -8,6 +9,7 @@ import style from './generalHeader.module.css'
 
 const GeneralHeader = () => {
     const { theme, toggleTheme } = useTheme()
+    const themeButtonRef = useRef<HTMLButtonElement>(null)
     const location = useLocation()
     const isExerciseWeapon = location.pathname === '/exercise-weapon'
 
@@ -26,9 +28,10 @@ const GeneralHeader = () => {
             )}
             <nav className={style.optionContainer}>
                 <button
+                    ref={themeButtonRef}
                     type="button"
                     className={style.themeToggle}
-                    onClick={toggleTheme}
+                    onClick={() => toggleTheme(themeButtonRef)}
                     aria-label={theme === 'dark' ? 'Alternar para modo claro' : 'Alternar para modo escuro'}
                 >
                     {theme === 'dark' ? <IoSunnyOutline size={22} /> : <IoMoonOutline size={22} />}

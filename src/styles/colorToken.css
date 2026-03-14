@@ -12,13 +12,18 @@
     --color-text-primary: #FFF;
     --color-text-secondary: #bebebe;
     --color-border: rgba(245, 158, 11, 0.4);
+    --color-card-border: var(--color-border);
     --color-border-hover: rgba(245, 75, 0, 0.6);
     --color-shadow: rgba(234, 88, 12, 1);
     --color-shadow-soft: rgba(0, 0, 0, 0.2);
+    --color-card-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    --color-dropdown-shadow: rgba(0, 0, 0, 0.25);
     --color-shadow-orange: rgba(255, 140, 0, 0.6);
     --color-surface-contrast: #FFF;
     --color-surface-contrast-hover: #b6b6b6;
     --color-progress-track: #1a2340;
+    --color-card-gradient-end: rgba(30, 35, 50, 0.95);
+    --color-weapons-column-bg: rgba(0, 0, 0, 0.2);
 
     /* Aliases (brand) */
     --common-text-color: var(--color-text-primary);

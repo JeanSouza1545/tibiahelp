@@ -86,3 +86,50 @@
     background: var(--main-hover-gradient);
     cursor: pointer;
 }
+
+@media (max-width: 768px) {
+    .generalHeaderContainer {
+        grid-template-columns: 1fr auto;
+    }
+
+    .centerSection {
+        display: none;
+    }
+
+    .logoImg {
+        margin-left: 12px;
+        height: 36px;
+    }
+
+    .optionContainer {
+        gap: 8px;
+    }
+
+    .userButton {
+        margin-right: 12px;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .generalHeaderContainer {
+        height: 48px;
+    }
+
+    .logoImg {
+        height: 32px;
+        margin-left: 8px;
+    }
+
+    .themeToggle {
+        width: 36px;
+        height: 36px;
+    }
+
+    .userButton {
+        margin-right: 8px;
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+}
