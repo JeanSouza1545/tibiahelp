@@ -69,9 +69,10 @@
 
 .configCard {
     background-color: var(--color-bg-secondary);
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--color-card-border);
     border-radius: 16px;
     padding: 24px;
+    box-shadow: var(--color-card-shadow);
 }
 
 .configCardTitle {
@@ -102,6 +103,13 @@
     min-width: 120px;
 }
 
+.weaponTypeSelect {
+    width: fit-content !important;
+    min-width: 210px;
+    box-sizing: border-box;
+    min-height: 50px;
+}
+
 .skillFieldsRow {
     display: flex;
     flex-direction: row;
@@ -109,28 +117,131 @@
     align-items: flex-end;
     gap: 16px;
     margin-bottom: 16px;
+    width: 100%;
 }
 
 .skillFieldsRow > * {
     margin-bottom: 0;
 }
 
-.skillInputWrapper,
-.percentualInputWrapper {
-    width: 120px;
+.skillFieldsRow > *:nth-child(n+3) {
+    flex: 1;
+    min-width: 90px;
 }
 
-.skillInputWrapper input,
-.percentualInputWrapper input {
+.skillFieldsRow input {
     box-sizing: border-box;
+    width: 100%;
     min-height: 50px;
     padding: 12px 36px 12px 14px;
+}
+
+.sliderWithButton {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.sliderWithButton > *:first-child {
+    flex: 1;
+    min-width: 0;
+}
+
+.calcularButton {
+    flex-shrink: 0;
+    min-width: 100px;
 }
 
 .resultsSection {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
+    min-height: 0;
+    align-self: stretch;
+}
+
+.resultsSection > * {
+    flex: 1;
+    min-height: 0;
+}
+
+.resultsSection .card,
+.resultsSection .cardResult {
+    min-height: auto;
+    padding: 16px;
+    height: 100%;
+}
+
+.resultsSection .card h3,
+.resultsSection .cardResult h3 {
+    font-size: var(--text-font-size-sm);
+    margin-bottom: 4px;
+}
+
+.resultsSection .card .value,
+.resultsSection .cardResult .value {
+    font-size: 18px;
+}
+
+.resultsSection > div:nth-child(-n+2) > div:last-child img {
+    width: 56px;
+    height: 56px;
+}
+
+.weaponsCard {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-card-gradient-end) 100%);
+    border: 1px solid var(--color-card-border);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: var(--color-card-shadow);
+}
+
+.weaponsCardTitle {
+    font-size: var(--text-font-size-sm);
+    font-family: var(--text-main-family);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin: 0 0 12px 0;
+}
+
+.weaponsCardColumns {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: space-between;
+}
+
+.weaponsColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    gap: 6px;
+    padding: 8px 4px;
+    background-color: var(--color-weapons-column-bg);
+    border-radius: 10px;
+}
+
+.weaponsColumnIcon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.weaponsColumnLabel {
+    font-size: var(--text-font-size-xs);
+    font-family: var(--text-main-family);
+    color: var(--color-text-secondary);
+    text-transform: capitalize;
+}
+
+.weaponsColumnQty {
+    font-size: var(--text-font-size-md);
+    font-family: var(--text-main-family);
+    font-weight: 700;
+    color: var(--title-text-color);
 }
 
 .detalhamentoSection {
@@ -152,9 +263,10 @@
 
 .dicasCard {
     background-color: var(--color-bg-secondary);
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--color-card-border);
     border-radius: 16px;
     padding: 24px;
+    box-shadow: var(--color-card-shadow);
 }
 
 .dicasList {
@@ -194,12 +306,203 @@
     }
 }
 
+@media (max-width: 768px) {
+    .mainContainer {
+        padding: 24px 16px 40px;
+    }
+
+    .configCard {
+        padding: 20px;
+    }
+
+    .weaponsCard {
+        padding: 12px;
+    }
+
+    .weaponsCardColumns {
+        gap: 8px;
+    }
+
+    .weaponsColumn {
+        padding: 6px 2px;
+    }
+
+    .weaponsColumnIcon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .weaponsColumnLabel {
+        font-size: 10px;
+    }
+
+    .weaponsColumnQty {
+        font-size: var(--text-font-size-sm);
+    }
+
+    .skillFieldsRow {
+        flex-direction: column;
+    }
+
+    .skillFieldsRow > * {
+        width: 100%;
+        flex: none;
+        min-width: 0;
+    }
+
+    .skillTypeSelect,
+    .weaponTypeSelect {
+        width: 100% !important;
+        min-width: 0;
+    }
+
+    .classAndBonusRow > *:first-child {
+        min-width: 0;
+    }
+
+    .sliderWithButton {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .calcularButton {
+        width: 100%;
+    }
+}
+
 @media (max-width: 600px) {
-    .detalhamentoCards {
-        grid-template-columns: 1fr;
+    .mainContainer {
+        padding: 20px 12px 32px;
+    }
+
+    .pageHeader {
+        margin-bottom: 16px;
     }
 
     .pageTitle {
         font-size: var(--text-font-size-lg);
+    }
+
+    .tagline {
+        font-size: var(--text-font-size-md);
+    }
+
+    .constructionBadge {
+        font-size: var(--text-font-size-md);
+        padding: 4px 10px;
+    }
+
+    .contentGrid {
+        gap: 24px;
+        margin-bottom: 24px;
+    }
+
+    .configCard {
+        padding: 16px;
+    }
+
+    .detalhamentoCards {
+        grid-template-columns: 1fr;
+    }
+
+    .weaponsCard {
+        padding: 10px;
+    }
+
+    .weaponsCardColumns {
+        gap: 6px;
+    }
+
+    .weaponsColumn {
+        padding: 4px 2px;
+        border-radius: 8px;
+    }
+
+    .weaponsColumnIcon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .weaponsColumnLabel {
+        font-size: 10px;
+    }
+
+    .weaponsColumnQty {
+        font-size: var(--text-font-size-xs);
+    }
+
+    .dicasCard {
+        padding: 16px;
+    }
+
+    .dicasList {
+        padding-left: 20px;
+        font-size: var(--text-font-size-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .mainContainer {
+        padding: 16px 12px 24px;
+    }
+
+    .pageTitle {
+        font-size: var(--text-font-size-md);
+    }
+
+    .taglineRow {
+        gap: 8px;
+        margin-top: 8px;
+    }
+
+    .classAndBonusRow {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .classAndBonusRow > * {
+        width: 100%;
+    }
+
+    .resultsSection .card,
+    .resultsSection .cardResult {
+        padding: 12px;
+    }
+
+    .resultsSection .card .value,
+    .resultsSection .cardResult .value {
+        font-size: 16px;
+    }
+
+    .resultsSection > div:nth-child(-n+2) > div:last-child img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .weaponsCard {
+        padding: 8px;
+    }
+
+    .weaponsCardColumns {
+        gap: 4px;
+    }
+
+    .weaponsColumn {
+        padding: 4px 2px;
+        gap: 4px;
+        border-radius: 6px;
+    }
+
+    .weaponsColumnIcon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .weaponsColumnLabel {
+        font-size: 9px;
+    }
+
+    .weaponsColumnQty {
+        font-size: 11px;
     }
 }

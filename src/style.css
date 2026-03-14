@@ -12,6 +12,13 @@
 }
 */
 
+/* View Transitions API - animação circular ao trocar tema */
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}
+
 html,
 body,
 #root {

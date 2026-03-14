@@ -37,3 +37,35 @@
     color: var(--color-text-primary);
     border-color: var(--main-dark-button-color);
 }
+
+@media (max-width: 600px) {
+    .tabs {
+        margin-bottom: 16px;
+    }
+
+    .tab {
+        flex: 1;
+        justify-content: center;
+        padding: 10px 12px;
+        font-size: var(--text-font-size-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .tabs {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .tab {
+        border-radius: 0 !important;
+    }
+
+    .tab:first-child {
+        border-radius: 8px 8px 0 0 !important;
+    }
+
+    .tab:last-child {
+        border-radius: 0 0 8px 8px !important;
+    }
+}

@@ -4,9 +4,6 @@ import {
     IoStatsChart,
     IoFlashOutline,
     IoBulbOutline,
-    IoLinkOutline,
-    IoTimeOutline,
-    IoTrendingUpOutline,
 } from 'react-icons/io5'
 import Tabs, { type TabItem } from '@/Components/Tabs'
 import InfoCard from '@/Components/InfoCard'
@@ -19,6 +16,7 @@ import Select from '@/Components/Select'
 import Input from '@/Components/Input'
 import Slider from '@/Components/Slider'
 import ProgressBar from '@/Components/ProgressBar'
+import OrangeButton from '@/Components/buttons/OrangeButton'
 import style from './exerciseWeapon.module.css'
 
 const TABS: TabItem[] = [
@@ -28,14 +26,17 @@ const TABS: TabItem[] = [
 
 
 const WEAPON_OPTIONS = [
-    { value: '1h', label: 'Exercise Weapon (1h) - 262.500 gp' },
+    { value: 'auto', label: 'Auto' },
+    { value: '500', label: '500 Cargas (16 Min)' },
+    { value: '1800', label: '1800 Cargas (1 Horas)' },
+    { value: '14400', label: '14400 Cargas (8 Horas)' },
 ]
 
 const DICAS = [
     'Exercise weapons podem ser usadas offline, permitindo treinar enquanto não está jogando',
     'O Loyalty Bonus aumenta significativamente a eficiência do treinamento - quanto maior o bonus, melhor',
-    'Weapons de maior duração (15min e 30min) têm melhor custo-benefício em skills mais altos',
-    'Treine em um dummy ou monk para maximizar a utilização das charges',
+    'Dummy privados aumentam em 10% o rendimento do treinamento',
+    'Se o valor do tibia coin for menor que 13800 é melhor comprar as exercise weapons na store'
 ]
 
 const ExerciseWeapon = () => {
@@ -50,6 +51,7 @@ const ExerciseWeapon = () => {
     const [skillCurrent, setSkillCurrent] = useState(80)
     const [skillTarget, setSkillTarget] = useState(100)
     const [percentual, setPercentual] = useState<number>(0)
+    const [weaponType, setWeaponType] = useState<string>('auto')
 
     const handleSkillCurrentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const val = e.target.value
@@ -113,7 +115,7 @@ const ExerciseWeapon = () => {
                 <>
                     <div className={style.contentGrid}>
                         <section className={style.configSection}>
-                            <div className={style.configCard}>
+                            <form className={style.configCard} onSubmit={(e) => e.preventDefault()}>
                                 <div className={style.configCardTitle}>
                                     <SectionTitle icon={IoFlashOutline}>
                                         Configuração de Treinamento
@@ -137,58 +139,63 @@ const ExerciseWeapon = () => {
                                             className={style.skillTypeSelect}
                                         />
                                     </FormField>
+                                    <FormField label="Tipo de Exercise Weapon">
+                                        <Select
+                                            value={weaponType}
+                                            options={WEAPON_OPTIONS}
+                                            onChange={setWeaponType}
+                                            className={style.weaponTypeSelect}
+                                        />
+                                    </FormField>
                                     <FormField label="Skill Atual">
-                                        <div className={style.skillInputWrapper}>
-                                            <Input
-                                                type="number"
-                                                min={0}
-                                                max={999}
-                                                step={1}
-                                                value={skillCurrent}
-                                                onChange={handleSkillCurrentChange}
-                                                inputMode="numeric"
-                                            />
-                                        </div>
+                                        <Input
+                                            type="number"
+                                            min={0}
+                                            max={999}
+                                            step={1}
+                                            value={skillCurrent}
+                                            onChange={handleSkillCurrentChange}
+                                            inputMode="numeric"
+                                        />
                                     </FormField>
                                     <FormField label="Percentual">
-                                        <div className={style.percentualInputWrapper}>
-                                            <Input
-                                                type="number"
-                                                min={0}
-                                                max={100}
-                                                step={0.01}
-                                                value={percentual}
-                                                onChange={handlePercentualChange}
-                                            />
-                                        </div>
+                                        <Input
+                                            type="number"
+                                            min={0}
+                                            max={100}
+                                            step={0.01}
+                                            value={percentual}
+                                            onChange={handlePercentualChange}
+                                        />
                                     </FormField>
                                     <FormField label="Skill Desejado">
-                                        <div className={style.skillInputWrapper}>
-                                            <Input
-                                                type="number"
-                                                min={0}
-                                                max={999}
-                                                step={1}
-                                                value={skillTarget}
-                                                onChange={handleSkillTargetChange}
-                                                inputMode="numeric"
+                                        <Input
+                                            type="number"
+                                            min={0}
+                                            max={999}
+                                            step={1}
+                                            value={skillTarget}
+                                            onChange={handleSkillTargetChange}
+                                            inputMode="numeric"
                                             />
-                                        </div>
                                     </FormField>
                                 </div>
                                 <FormField label={`Loyalty Bonus: ${loyaltyBonus}%`}>
-                                    <Slider
-                                        value={loyaltyBonus}
-                                        min={0}
-                                        max={50}
-                                        onChange={setLoyaltyBonus}
-                                    />
-                                </FormField>
-                                <FormField label="Tipo de Exercise Weapon">
-                                    <Select
-                                        value="1h"
-                                        options={WEAPON_OPTIONS}
-                                    />
+                                    <div className={style.sliderWithButton}>
+                                        <Slider
+                                            value={loyaltyBonus}
+                                            min={0}
+                                            max={50}
+                                            onChange={setLoyaltyBonus}
+                                        />
+                                        <OrangeButton
+                                            type="button"
+                                            onClick={() => alert('Calculo em construção')}
+                                            className={style.calcularButton}
+                                        >
+                                            Calcular
+                                        </OrangeButton>
+                                    </div>
                                 </FormField>
                                 <ProgressBar
                                     leftLabel={`Skill ${skillCurrent}`}
@@ -197,64 +204,62 @@ const ExerciseWeapon = () => {
                                     target={skillTarget}
                                     subtitle={`+${Math.max(0, skillTarget - skillCurrent)} levels para treinar`}
                                 />
-                            </div>
+                            </form>
                         </section>
 
                         <section className={style.resultsSection}>
                             <InfoCard
-                                icon={IoLinkOutline}
-                                iconColor="#F54B00"
+                                iconImage="https://www.tibiawiki.com.br/images/b/b0/Gold_Coin.gif"
+                                iconPosition="right"
                                 title="Custo Total"
                                 value="1.516.200.000 gp"
-                                valueColor="#F54B00"
+                                valueColor="#F59E0B"
                                 subtitle="75.810.000 gp por skill"
                                 variant="result"
                             />
                             <InfoCard
-                                icon={IoTimeOutline}
-                                iconColor="#0091C2"
+                                iconImage="https://www.tibiawiki.com.br/images/5/58/Pendulum_Clock.gif"
+                                iconPosition="right"
                                 title="Tempo Total"
                                 value="240d 16h 0m"
                                 valueColor="#0091C2"
-                                subtitle="5.776 weapons necessárias"
+                                subtitle="5.776 cargas necessárias"
                                 variant="result"
                             />
-                            <InfoCard
-                                icon={IoTrendingUpOutline}
-                                iconColor="#F0165D"
-                                title="Hits Necessários"
-                                value="2.887.571"
-                                valueColor="#F0165D"
-                                variant="result"
-                            />
+                            <div className={style.weaponsCard}>
+                                <h3 className={style.weaponsCardTitle}>Weapons necessárias</h3>
+                                <div className={style.weaponsCardColumns}>
+                                    <div className={style.weaponsColumn}>
+                                        <img
+                                            src="https://www.tibiawiki.com.br/images/e/e8/Exercise_Rod.gif"
+                                            alt="Regular"
+                                            className={style.weaponsColumnIcon}
+                                        />
+                                        <span className={style.weaponsColumnLabel}>Regular</span>
+                                        <span className={style.weaponsColumnQty}>2x</span>
+                                    </div>
+                                    <div className={style.weaponsColumn}>
+                                        <img
+                                            src="https://www.tibiawiki.com.br/images/3/3e/Durable_Exercise_Rod.gif"
+                                            alt="Durable"
+                                            className={style.weaponsColumnIcon}
+                                        />
+                                        <span className={style.weaponsColumnLabel}>Durable</span>
+                                        <span className={style.weaponsColumnQty}>1x</span>
+                                    </div>
+                                    <div className={style.weaponsColumn}>
+                                        <img
+                                            src="https://www.tibiawiki.com.br/images/3/31/Lasting_Exercise_Rod.gif"
+                                            alt="Lasting"
+                                            className={style.weaponsColumnIcon}
+                                        />
+                                        <span className={style.weaponsColumnLabel}>Lasting</span>
+                                        <span className={style.weaponsColumnQty}>0x</span>
+                                    </div>
+                                </div>
+                            </div>
                         </section>
                     </div>
-
-                    <section className={style.detalhamentoSection}>
-                        <SectionTitle>Detalhamento</SectionTitle>
-                        <div className={style.detalhamentoCards}>
-                            <InfoCard
-                                title="Weapon Selecionada"
-                                value="Exercise Weapon (1h)"
-                                subtitle="500 charges"
-                            />
-                            <InfoCard
-                                title="Skill Points Necessários"
-                                value="2.887.570"
-                                subtitle="pontos de progresso"
-                            />
-                            <InfoCard
-                                title="Duração por Weapon"
-                                value="60 min"
-                                subtitle="de treinamento offline"
-                            />
-                            <InfoCard
-                                title="Loyalty Bonus Ativo"
-                                value={`${loyaltyBonus}%`}
-                                subtitle="skill gain extra"
-                            />
-                        </div>
-                    </section>
 
                     <section className={style.dicasSection}>
                         <SectionTitle icon={IoBulbOutline}>Dicas</SectionTitle>
